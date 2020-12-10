@@ -879,7 +879,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -896,7 +896,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -971,7 +971,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -991,7 +991,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1041,7 +1041,7 @@ class ConfigurationEntryApi
     /**
      * Create request for operation 'postConfigurationEntryCollection'
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1135,7 +1135,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1152,7 +1152,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1227,7 +1227,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1247,7 +1247,7 @@ class ConfigurationEntryApi
      *
      * Creates a ConfigurationEntry resource.
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1297,7 +1297,7 @@ class ConfigurationEntryApi
     /**
      * Create request for operation 'postConfigurationEntryCollection'
      *
-     * @param  map[string,object] $body The new ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The new ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1392,7 +1392,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1410,7 +1410,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1486,7 +1486,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1507,7 +1507,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1558,7 +1558,7 @@ class ConfigurationEntryApi
      * Create request for operation 'putConfigurationEntryItem'
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1667,7 +1667,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1685,7 +1685,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1761,7 +1761,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1782,7 +1782,7 @@ class ConfigurationEntryApi
      * Replaces the ConfigurationEntry resource.
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1833,7 +1833,7 @@ class ConfigurationEntryApi
      * Create request for operation 'putConfigurationEntryItem'
      *
      * @param  string $id (required)
-     * @param  map[string,object] $body The updated ConfigurationEntry resource (optional)
+     * @param  \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite $body The updated ConfigurationEntry resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

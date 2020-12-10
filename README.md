@@ -130,7 +130,7 @@ $apiInstance = new VentureLeap\RatingService\Api\ConfigurationEntryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The new ConfigurationEntry resource
+$body = new \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite | The new ConfigurationEntry resource
 
 try {
     $result = $apiInstance->postConfigurationEntryCollection($body);
@@ -151,7 +151,7 @@ $apiInstance = new VentureLeap\RatingService\Api\ConfigurationEntryApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The updated ConfigurationEntry resource
+$body = new \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite | The updated ConfigurationEntry resource
 
 try {
     $result = $apiInstance->putConfigurationEntryItem($id, $body);
@@ -174,7 +174,7 @@ Class | Method | HTTP request | Description
 *ConfigurationEntryApi* | [**postConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#postconfigurationentrycollection) | **POST** /rating/configuration_entries | Creates a ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**putConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#putconfigurationentryitem) | **PUT** /rating/configuration_entries/{id} | Replaces the ConfigurationEntry resource.
 *RatingApi* | [**deleteRatingItem**](docs/Api/RatingApi.md#deleteratingitem) | **DELETE** /rating/ratings/{id} | Removes the Rating resource.
-*RatingApi* | [**findAverageRatingRatingItem**](docs/Api/RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/average-rating/{productUuid} | Retrieves a Rating resource.
+*RatingApi* | [**findAverageRatingRatingItem**](docs/Api/RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/{productUuid}/average-rating/ | Retrieves a Rating resource.
 *RatingApi* | [**getRatingCollection**](docs/Api/RatingApi.md#getratingcollection) | **GET** /rating/ratings | Retrieves the collection of Rating resources.
 *RatingApi* | [**getRatingItem**](docs/Api/RatingApi.md#getratingitem) | **GET** /rating/ratings/{id} | Retrieves a Rating resource.
 *RatingApi* | [**postRatingCollection**](docs/Api/RatingApi.md#postratingcollection) | **POST** /rating/ratings | Creates a Rating resource.

@@ -5,7 +5,7 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteRatingItem**](RatingApi.md#deleteratingitem) | **DELETE** /rating/ratings/{id} | Removes the Rating resource.
-[**findAverageRatingRatingItem**](RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/average-rating/{productUuid} | Retrieves a Rating resource.
+[**findAverageRatingRatingItem**](RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/{productUuid}/average-rating/ | Retrieves a Rating resource.
 [**getRatingCollection**](RatingApi.md#getratingcollection) | **GET** /rating/ratings | Retrieves the collection of Rating resources.
 [**getRatingItem**](RatingApi.md#getratingitem) | **GET** /rating/ratings/{id} | Retrieves a Rating resource.
 [**postRatingCollection**](RatingApi.md#postratingcollection) | **POST** /rating/ratings | Creates a Rating resource.
@@ -240,7 +240,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The new Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The new Rating resource
 
 try {
     $result = $apiInstance->postRatingCollection($body);
@@ -255,7 +255,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**map[string,object]**](../Model/map.md)| The new Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The new Rating resource | [optional]
 
 ### Return type
 
@@ -292,7 +292,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The new Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The new Rating resource
 
 try {
     $result = $apiInstance->postRatingCollection($body);
@@ -307,7 +307,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**map[string,object]**](../Model/map.md)| The new Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The new Rating resource | [optional]
 
 ### Return type
 
@@ -345,7 +345,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The updated Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The updated Rating resource
 
 try {
     $result = $apiInstance->putRatingItem($id, $body);
@@ -361,7 +361,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**map[string,object]**](../Model/map.md)| The updated Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The updated Rating resource | [optional]
 
 ### Return type
 
@@ -399,7 +399,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\map(); // map[string,object] | The updated Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The updated Rating resource
 
 try {
     $result = $apiInstance->putRatingItem($id, $body);
@@ -415,7 +415,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**map[string,object]**](../Model/map.md)| The updated Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The updated Rating resource | [optional]
 
 ### Return type
 

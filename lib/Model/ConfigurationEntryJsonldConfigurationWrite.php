@@ -54,7 +54,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-            ];
+        'context' => 'string',
+'id' => 'string',
+'type' => 'string',
+'key' => 'string',
+'sub_key' => 'string',
+'value' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,7 +67,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-            ];
+        'context' => null,
+'id' => null,
+'type' => null,
+'key' => null,
+'sub_key' => null,
+'value' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +101,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-            ];
+        'context' => '@context',
+'id' => '@id',
+'type' => '@type',
+'key' => 'key',
+'sub_key' => 'subKey',
+'value' => 'value'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,7 +114,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-            ];
+        'context' => 'setContext',
+'id' => 'setId',
+'type' => 'setType',
+'key' => 'setKey',
+'sub_key' => 'setSubKey',
+'value' => 'setValue'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,7 +127,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-            ];
+        'context' => 'getContext',
+'id' => 'getId',
+'type' => 'getType',
+'key' => 'getKey',
+'sub_key' => 'getSubKey',
+'value' => 'getValue'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,6 +192,12 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
+        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['sub_key'] = isset($data['sub_key']) ? $data['sub_key'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -176,8 +207,11 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -192,6 +226,150 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->container['context'];
+    }
+
+    /**
+     * Sets context
+     *
+     * @param string $context context
+     *
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->container['context'] = $context;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string $key key
+     *
+     * @return $this
+     */
+    public function setKey($key)
+    {
+        $this->container['key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_key
+     *
+     * @return string
+     */
+    public function getSubKey()
+    {
+        return $this->container['sub_key'];
+    }
+
+    /**
+     * Sets sub_key
+     *
+     * @param string $sub_key sub_key
+     *
+     * @return $this
+     */
+    public function setSubKey($sub_key)
+    {
+        $this->container['sub_key'] = $sub_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param string $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

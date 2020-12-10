@@ -54,7 +54,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-            ];
+        'uuid' => 'string',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
+'key' => 'string',
+'sub_key' => 'string',
+'value' => 'string',
+'application_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,7 +68,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-            ];
+        'uuid' => 'uuid',
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
+'key' => null,
+'sub_key' => null,
+'value' => null,
+'application_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +103,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-            ];
+        'uuid' => 'uuid',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
+'key' => 'key',
+'sub_key' => 'subKey',
+'value' => 'value',
+'application_id' => 'applicationId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,7 +117,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-            ];
+        'uuid' => 'setUuid',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
+'key' => 'setKey',
+'sub_key' => 'setSubKey',
+'value' => 'setValue',
+'application_id' => 'setApplicationId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,7 +131,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-            ];
+        'uuid' => 'getUuid',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
+'key' => 'getKey',
+'sub_key' => 'getSubKey',
+'value' => 'getValue',
+'application_id' => 'getApplicationId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,6 +197,13 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['sub_key'] = isset($data['sub_key']) ? $data['sub_key'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
     }
 
     /**
@@ -176,8 +213,11 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -192,6 +232,174 @@ class ConfigurationEntryConfigurationRead implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string $key key
+     *
+     * @return $this
+     */
+    public function setKey($key)
+    {
+        $this->container['key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_key
+     *
+     * @return string
+     */
+    public function getSubKey()
+    {
+        return $this->container['sub_key'];
+    }
+
+    /**
+     * Sets sub_key
+     *
+     * @param string $sub_key sub_key
+     *
+     * @return $this
+     */
+    public function setSubKey($sub_key)
+    {
+        $this->container['sub_key'] = $sub_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param string $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

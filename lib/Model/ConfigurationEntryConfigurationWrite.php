@@ -54,7 +54,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $swaggerTypes = [
-            ];
+        'key' => 'string',
+'sub_key' => 'string',
+'value' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,7 +64,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $swaggerFormats = [
-            ];
+        'key' => null,
+'sub_key' => null,
+'value' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +95,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-            ];
+        'key' => 'key',
+'sub_key' => 'subKey',
+'value' => 'value'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,7 +105,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-            ];
+        'key' => 'setKey',
+'sub_key' => 'setSubKey',
+'value' => 'setValue'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,7 +115,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-            ];
+        'key' => 'getKey',
+'sub_key' => 'getSubKey',
+'value' => 'getValue'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,6 +177,9 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['sub_key'] = isset($data['sub_key']) ? $data['sub_key'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -176,8 +189,11 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -192,6 +208,78 @@ class ConfigurationEntryConfigurationWrite implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets key
+     *
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string $key key
+     *
+     * @return $this
+     */
+    public function setKey($key)
+    {
+        $this->container['key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_key
+     *
+     * @return string
+     */
+    public function getSubKey()
+    {
+        return $this->container['sub_key'];
+    }
+
+    /**
+     * Sets sub_key
+     *
+     * @param string $sub_key sub_key
+     *
+     * @return $this
+     */
+    public function setSubKey($sub_key)
+    {
+        $this->container['sub_key'] = $sub_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param string $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

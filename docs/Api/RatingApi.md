@@ -5,6 +5,7 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteRatingItem**](RatingApi.md#deleteratingitem) | **DELETE** /rating/ratings/{id} | Removes the Rating resource.
+[**findAverageRatingRatingItem**](RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/average-rating/{productUuid} | Retrieves a Rating resource.
 [**getRatingCollection**](RatingApi.md#getratingcollection) | **GET** /rating/ratings | Retrieves the collection of Rating resources.
 [**getRatingItem**](RatingApi.md#getratingitem) | **GET** /rating/ratings/{id} | Retrieves a Rating resource.
 [**postRatingCollection**](RatingApi.md#postratingcollection) | **POST** /rating/ratings | Creates a Rating resource.
@@ -61,8 +62,60 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **findAverageRatingRatingItem**
+> \VentureLeap\RatingService\Model\AverageRating findAverageRatingRatingItem($product_uuid)
+
+Retrieves a Rating resource.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: apiKey
+$config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new VentureLeap\RatingService\Api\RatingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$product_uuid = "product_uuid_example"; // string | 
+
+try {
+    $result = $apiInstance->findAverageRatingRatingItem($product_uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RatingApi->findAverageRatingRatingItem: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_uuid** | **string**|  |
+
+### Return type
+
+[**\VentureLeap\RatingService\Model\AverageRating**](../Model/AverageRating.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getRatingCollection**
-> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $application_id, $page)
+> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $page)
 
 Retrieves the collection of Rating resources.
 
@@ -82,11 +135,10 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $product_uuid = "product_uuid_example"; // string | 
-$application_id = "application_id_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getRatingCollection($product_uuid, $application_id, $page);
+    $result = $apiInstance->getRatingCollection($product_uuid, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RatingApi->getRatingCollection: ', $e->getMessage(), PHP_EOL;
@@ -99,7 +151,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_uuid** | **string**|  | [optional]
- **application_id** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type

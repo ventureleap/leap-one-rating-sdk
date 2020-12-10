@@ -174,6 +174,7 @@ Class | Method | HTTP request | Description
 *ConfigurationEntryApi* | [**postConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#postconfigurationentrycollection) | **POST** /rating/configuration_entries | Creates a ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**putConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#putconfigurationentryitem) | **PUT** /rating/configuration_entries/{id} | Replaces the ConfigurationEntry resource.
 *RatingApi* | [**deleteRatingItem**](docs/Api/RatingApi.md#deleteratingitem) | **DELETE** /rating/ratings/{id} | Removes the Rating resource.
+*RatingApi* | [**findAverageRatingRatingItem**](docs/Api/RatingApi.md#findaverageratingratingitem) | **GET** /rating/ratings/average-rating/{productUuid} | Retrieves a Rating resource.
 *RatingApi* | [**getRatingCollection**](docs/Api/RatingApi.md#getratingcollection) | **GET** /rating/ratings | Retrieves the collection of Rating resources.
 *RatingApi* | [**getRatingItem**](docs/Api/RatingApi.md#getratingitem) | **GET** /rating/ratings/{id} | Retrieves a Rating resource.
 *RatingApi* | [**postRatingCollection**](docs/Api/RatingApi.md#postratingcollection) | **POST** /rating/ratings | Creates a Rating resource.
@@ -181,6 +182,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AverageRating](docs/Model/AverageRating.md)
  - [ConfigurationEntryConfigurationRead](docs/Model/ConfigurationEntryConfigurationRead.md)
  - [ConfigurationEntryConfigurationWrite](docs/Model/ConfigurationEntryConfigurationWrite.md)
  - [ConfigurationEntryJsonldConfigurationRead](docs/Model/ConfigurationEntryJsonldConfigurationRead.md)
@@ -191,9 +193,9 @@ Class | Method | HTTP request | Description
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
  - [RatingJsonldRatingReadApplicationIdRead](docs/Model/RatingJsonldRatingReadApplicationIdRead.md)
- - [RatingJsonldRatingWriteApplicationIdWrite](docs/Model/RatingJsonldRatingWriteApplicationIdWrite.md)
+ - [RatingJsonldRatingWrite](docs/Model/RatingJsonldRatingWrite.md)
  - [RatingRatingReadApplicationIdRead](docs/Model/RatingRatingReadApplicationIdRead.md)
- - [RatingRatingWriteApplicationIdWrite](docs/Model/RatingRatingWriteApplicationIdWrite.md)
+ - [RatingRatingWrite](docs/Model/RatingRatingWrite.md)
 
 ## Documentation For Authorization
 

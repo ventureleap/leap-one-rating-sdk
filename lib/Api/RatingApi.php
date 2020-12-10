@@ -315,21 +315,287 @@ class RatingApi
     }
 
     /**
+     * Operation findAverageRatingRatingItem
+     *
+     * Retrieves a Rating resource.
+     *
+     * @param  string $product_uuid product_uuid (required)
+     *
+     * @throws \VentureLeap\RatingService\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \VentureLeap\RatingService\Model\AverageRating
+     */
+    public function findAverageRatingRatingItem($product_uuid)
+    {
+        list($response) = $this->findAverageRatingRatingItemWithHttpInfo($product_uuid);
+        return $response;
+    }
+
+    /**
+     * Operation findAverageRatingRatingItemWithHttpInfo
+     *
+     * Retrieves a Rating resource.
+     *
+     * @param  string $product_uuid (required)
+     *
+     * @throws \VentureLeap\RatingService\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \VentureLeap\RatingService\Model\AverageRating, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function findAverageRatingRatingItemWithHttpInfo($product_uuid)
+    {
+        $returnType = '\VentureLeap\RatingService\Model\AverageRating';
+        $request = $this->findAverageRatingRatingItemRequest($product_uuid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\VentureLeap\RatingService\Model\AverageRating',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation findAverageRatingRatingItemAsync
+     *
+     * Retrieves a Rating resource.
+     *
+     * @param  string $product_uuid (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function findAverageRatingRatingItemAsync($product_uuid)
+    {
+        return $this->findAverageRatingRatingItemAsyncWithHttpInfo($product_uuid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation findAverageRatingRatingItemAsyncWithHttpInfo
+     *
+     * Retrieves a Rating resource.
+     *
+     * @param  string $product_uuid (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function findAverageRatingRatingItemAsyncWithHttpInfo($product_uuid)
+    {
+        $returnType = '\VentureLeap\RatingService\Model\AverageRating';
+        $request = $this->findAverageRatingRatingItemRequest($product_uuid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'findAverageRatingRatingItem'
+     *
+     * @param  string $product_uuid (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function findAverageRatingRatingItemRequest($product_uuid)
+    {
+        // verify the required parameter 'product_uuid' is set
+        if ($product_uuid === null || (is_array($product_uuid) && count($product_uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $product_uuid when calling findAverageRatingRatingItem'
+            );
+        }
+
+        $resourcePath = '/rating/ratings/average-rating/{productUuid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($product_uuid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'productUuid' . '}',
+                ObjectSerializer::toPathValue($product_uuid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getRatingCollection
      *
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid product_uuid (optional)
-     * @param  string $application_id application_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\RatingService\Model\InlineResponse2001
      */
-    public function getRatingCollection($product_uuid = null, $application_id = null, $page = '1')
+    public function getRatingCollection($product_uuid = null, $page = '1')
     {
-        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $application_id, $page);
+        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $page);
         return $response;
     }
 
@@ -339,17 +605,16 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
-     * @param  string $application_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\RatingService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRatingCollectionWithHttpInfo($product_uuid = null, $application_id = null, $page = '1')
+    public function getRatingCollectionWithHttpInfo($product_uuid = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $application_id, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -416,15 +681,14 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
-     * @param  string $application_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsync($product_uuid = null, $application_id = null, $page = '1')
+    public function getRatingCollectionAsync($product_uuid = null, $page = '1')
     {
-        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $application_id, $page)
+        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -438,16 +702,15 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
-     * @param  string $application_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $application_id = null, $page = '1')
+    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $application_id, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -490,13 +753,12 @@ class RatingApi
      * Create request for operation 'getRatingCollection'
      *
      * @param  string $product_uuid (optional)
-     * @param  string $application_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRatingCollectionRequest($product_uuid = null, $application_id = null, $page = '1')
+    protected function getRatingCollectionRequest($product_uuid = null, $page = '1')
     {
 
         $resourcePath = '/rating/ratings';
@@ -509,10 +771,6 @@ class RatingApi
         // query params
         if ($product_uuid !== null) {
             $queryParams['productUuid'] = ObjectSerializer::toQueryValue($product_uuid, null);
-        }
-        // query params
-        if ($application_id !== null) {
-            $queryParams['applicationId'] = ObjectSerializer::toQueryValue($application_id, null);
         }
         // query params
         if ($page !== null) {

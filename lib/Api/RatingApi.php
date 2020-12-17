@@ -587,15 +587,16 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid product_uuid (optional)
+     * @param  bool $exists_review exists_review (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\RatingService\Model\InlineResponse2001
      */
-    public function getRatingCollection($product_uuid = null, $page = '1')
+    public function getRatingCollection($product_uuid = null, $exists_review = null, $page = '1')
     {
-        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $page);
+        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $exists_review, $page);
         return $response;
     }
 
@@ -605,16 +606,17 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
+     * @param  bool $exists_review (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\RatingService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRatingCollectionWithHttpInfo($product_uuid = null, $page = '1')
+    public function getRatingCollectionWithHttpInfo($product_uuid = null, $exists_review = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -681,14 +683,15 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
+     * @param  bool $exists_review (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsync($product_uuid = null, $page = '1')
+    public function getRatingCollectionAsync($product_uuid = null, $exists_review = null, $page = '1')
     {
-        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $page)
+        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $exists_review, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -702,15 +705,16 @@ class RatingApi
      * Retrieves the collection of Rating resources.
      *
      * @param  string $product_uuid (optional)
+     * @param  bool $exists_review (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $page = '1')
+    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $exists_review = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -753,12 +757,13 @@ class RatingApi
      * Create request for operation 'getRatingCollection'
      *
      * @param  string $product_uuid (optional)
+     * @param  bool $exists_review (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRatingCollectionRequest($product_uuid = null, $page = '1')
+    protected function getRatingCollectionRequest($product_uuid = null, $exists_review = null, $page = '1')
     {
 
         $resourcePath = '/rating/ratings';
@@ -771,6 +776,10 @@ class RatingApi
         // query params
         if ($product_uuid !== null) {
             $queryParams['productUuid'] = ObjectSerializer::toQueryValue($product_uuid, null);
+        }
+        // query params
+        if ($exists_review !== null) {
+            $queryParams['exists[review]'] = ObjectSerializer::toQueryValue($exists_review, null);
         }
         // query params
         if ($page !== null) {
@@ -856,7 +865,7 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead
+     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead
      */
     public function getRatingItem($id)
     {
@@ -873,11 +882,11 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRatingItemWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->getRatingItemRequest($id);
 
         try {
@@ -929,7 +938,7 @@ class RatingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead',
+                        '\VentureLeap\RatingService\Model\RatingJsonldRatingRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +980,7 @@ class RatingApi
      */
     public function getRatingItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->getRatingItemRequest($id);
 
         return $this->client
@@ -1123,7 +1132,7 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead
+     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead
      */
     public function postRatingCollection($body = null)
     {
@@ -1140,11 +1149,11 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postRatingCollectionWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->postRatingCollectionRequest($body);
 
         try {
@@ -1196,7 +1205,7 @@ class RatingApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead',
+                        '\VentureLeap\RatingService\Model\RatingJsonldRatingRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1238,7 +1247,7 @@ class RatingApi
      */
     public function postRatingCollectionAsyncWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->postRatingCollectionRequest($body);
 
         return $this->client
@@ -1379,7 +1388,7 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead
+     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead
      */
     public function postRatingCollection($body = null)
     {
@@ -1396,11 +1405,11 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postRatingCollectionWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->postRatingCollectionRequest($body);
 
         try {
@@ -1452,7 +1461,7 @@ class RatingApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead',
+                        '\VentureLeap\RatingService\Model\RatingJsonldRatingRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1494,7 +1503,7 @@ class RatingApi
      */
     public function postRatingCollectionAsyncWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->postRatingCollectionRequest($body);
 
         return $this->client
@@ -1636,7 +1645,7 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead
+     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead
      */
     public function putRatingItem($id, $body = null)
     {
@@ -1654,11 +1663,11 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putRatingItemWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->putRatingItemRequest($id, $body);
 
         try {
@@ -1710,7 +1719,7 @@ class RatingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead',
+                        '\VentureLeap\RatingService\Model\RatingJsonldRatingRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1754,7 +1763,7 @@ class RatingApi
      */
     public function putRatingItemAsyncWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->putRatingItemRequest($id, $body);
 
         return $this->client
@@ -1911,7 +1920,7 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead
+     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead
      */
     public function putRatingItem($id, $body = null)
     {
@@ -1929,11 +1938,11 @@ class RatingApi
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\RatingService\Model\RatingJsonldRatingRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putRatingItemWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->putRatingItemRequest($id, $body);
 
         try {
@@ -1985,7 +1994,7 @@ class RatingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead',
+                        '\VentureLeap\RatingService\Model\RatingJsonldRatingRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2029,7 +2038,7 @@ class RatingApi
      */
     public function putRatingItemAsyncWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead';
+        $returnType = '\VentureLeap\RatingService\Model\RatingJsonldRatingRead';
         $request = $this->putRatingItemRequest($id, $body);
 
         return $this->client

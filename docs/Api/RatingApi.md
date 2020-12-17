@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRatingCollection**
-> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $page)
+> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $exists_review, $page)
 
 Retrieves the collection of Rating resources.
 
@@ -135,10 +135,11 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $product_uuid = "product_uuid_example"; // string | 
+$exists_review = true; // bool | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getRatingCollection($product_uuid, $page);
+    $result = $apiInstance->getRatingCollection($product_uuid, $exists_review, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RatingApi->getRatingCollection: ', $e->getMessage(), PHP_EOL;
@@ -151,6 +152,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_uuid** | **string**|  | [optional]
+ **exists_review** | **bool**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
@@ -169,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRatingItem**
-> \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead getRatingItem($id)
+> \VentureLeap\RatingService\Model\RatingJsonldRatingRead getRatingItem($id)
 
 Retrieves a Rating resource.
 
@@ -207,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead**](../Model/RatingJsonldRatingReadApplicationIdRead.md)
+[**\VentureLeap\RatingService\Model\RatingJsonldRatingRead**](../Model/RatingJsonldRatingRead.md)
 
 ### Authorization
 
@@ -221,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postRatingCollection**
-> \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead postRatingCollection($body)
+> \VentureLeap\RatingService\Model\RatingJsonldRatingRead postRatingCollection($body)
 
 Creates a Rating resource.
 
@@ -259,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead**](../Model/RatingJsonldRatingReadApplicationIdRead.md)
+[**\VentureLeap\RatingService\Model\RatingJsonldRatingRead**](../Model/RatingJsonldRatingRead.md)
 
 ### Authorization
 
@@ -273,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postRatingCollection**
-> \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead postRatingCollection($body)
+> \VentureLeap\RatingService\Model\RatingJsonldRatingRead postRatingCollection($body)
 
 Creates a Rating resource.
 
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead**](../Model/RatingJsonldRatingReadApplicationIdRead.md)
+[**\VentureLeap\RatingService\Model\RatingJsonldRatingRead**](../Model/RatingJsonldRatingRead.md)
 
 ### Authorization
 
@@ -325,7 +327,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putRatingItem**
-> \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead putRatingItem($id, $body)
+> \VentureLeap\RatingService\Model\RatingJsonldRatingRead putRatingItem($id, $body)
 
 Replaces the Rating resource.
 
@@ -365,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead**](../Model/RatingJsonldRatingReadApplicationIdRead.md)
+[**\VentureLeap\RatingService\Model\RatingJsonldRatingRead**](../Model/RatingJsonldRatingRead.md)
 
 ### Authorization
 
@@ -379,7 +381,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putRatingItem**
-> \VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead putRatingItem($id, $body)
+> \VentureLeap\RatingService\Model\RatingJsonldRatingRead putRatingItem($id, $body)
 
 Replaces the Rating resource.
 
@@ -419,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\RatingService\Model\RatingJsonldRatingReadApplicationIdRead**](../Model/RatingJsonldRatingReadApplicationIdRead.md)
+[**\VentureLeap\RatingService\Model\RatingJsonldRatingRead**](../Model/RatingJsonldRatingRead.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * RatingRatingRead
  *
  * PHP version 5
  *
@@ -30,14 +30,14 @@ use \ArrayAccess;
 use \VentureLeap\RatingService\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * RatingRatingRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RatingService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess
+class RatingRatingRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_1';
+    protected static $swaggerModelName = 'Rating-rating:read';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -54,10 +54,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hydramember' => '\VentureLeap\RatingService\Model\RatingJsonldRatingRead[]',
-'hydratotal_items' => 'int',
-'hydraview' => '\VentureLeap\RatingService\Model\InlineResponse200Hydraview',
-'hydrasearch' => '\VentureLeap\RatingService\Model\InlineResponse200Hydrasearch'    ];
+        'uuid' => 'string',
+'score' => 'int',
+'author_uuid' => 'string',
+'product_uuid' => 'string',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
+'title' => 'string',
+'review' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,10 +69,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'hydramember' => null,
-'hydratotal_items' => null,
-'hydraview' => null,
-'hydrasearch' => null    ];
+        'uuid' => null,
+'score' => null,
+'author_uuid' => null,
+'product_uuid' => null,
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
+'title' => null,
+'review' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,10 +105,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'hydramember' => 'hydra:member',
-'hydratotal_items' => 'hydra:totalItems',
-'hydraview' => 'hydra:view',
-'hydrasearch' => 'hydra:search'    ];
+        'uuid' => 'uuid',
+'score' => 'score',
+'author_uuid' => 'authorUuid',
+'product_uuid' => 'productUuid',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
+'title' => 'title',
+'review' => 'review'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -108,10 +120,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'hydramember' => 'setHydramember',
-'hydratotal_items' => 'setHydratotalItems',
-'hydraview' => 'setHydraview',
-'hydrasearch' => 'setHydrasearch'    ];
+        'uuid' => 'setUuid',
+'score' => 'setScore',
+'author_uuid' => 'setAuthorUuid',
+'product_uuid' => 'setProductUuid',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
+'title' => 'setTitle',
+'review' => 'setReview'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -119,10 +135,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'hydramember' => 'getHydramember',
-'hydratotal_items' => 'getHydratotalItems',
-'hydraview' => 'getHydraview',
-'hydrasearch' => 'getHydrasearch'    ];
+        'uuid' => 'getUuid',
+'score' => 'getScore',
+'author_uuid' => 'getAuthorUuid',
+'product_uuid' => 'getProductUuid',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
+'title' => 'getTitle',
+'review' => 'getReview'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -182,10 +202,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hydramember'] = isset($data['hydramember']) ? $data['hydramember'] : null;
-        $this->container['hydratotal_items'] = isset($data['hydratotal_items']) ? $data['hydratotal_items'] : null;
-        $this->container['hydraview'] = isset($data['hydraview']) ? $data['hydraview'] : null;
-        $this->container['hydrasearch'] = isset($data['hydrasearch']) ? $data['hydrasearch'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['score'] = isset($data['score']) ? $data['score'] : null;
+        $this->container['author_uuid'] = isset($data['author_uuid']) ? $data['author_uuid'] : null;
+        $this->container['product_uuid'] = isset($data['product_uuid']) ? $data['product_uuid'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['review'] = isset($data['review']) ? $data['review'] : null;
     }
 
     /**
@@ -197,8 +221,14 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['hydramember'] === null) {
-            $invalidProperties[] = "'hydramember' can't be null";
+        if ($this->container['score'] === null) {
+            $invalidProperties[] = "'score' can't be null";
+        }
+        if ($this->container['author_uuid'] === null) {
+            $invalidProperties[] = "'author_uuid' can't be null";
+        }
+        if ($this->container['product_uuid'] === null) {
+            $invalidProperties[] = "'product_uuid' can't be null";
         }
         return $invalidProperties;
     }
@@ -216,97 +246,193 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets hydramember
+     * Gets uuid
      *
-     * @return \VentureLeap\RatingService\Model\RatingJsonldRatingRead[]
+     * @return string
      */
-    public function getHydramember()
+    public function getUuid()
     {
-        return $this->container['hydramember'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets hydramember
+     * Sets uuid
      *
-     * @param \VentureLeap\RatingService\Model\RatingJsonldRatingRead[] $hydramember hydramember
+     * @param string $uuid uuid
      *
      * @return $this
      */
-    public function setHydramember($hydramember)
+    public function setUuid($uuid)
     {
-        $this->container['hydramember'] = $hydramember;
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
 
     /**
-     * Gets hydratotal_items
+     * Gets score
      *
      * @return int
      */
-    public function getHydratotalItems()
+    public function getScore()
     {
-        return $this->container['hydratotal_items'];
+        return $this->container['score'];
     }
 
     /**
-     * Sets hydratotal_items
+     * Sets score
      *
-     * @param int $hydratotal_items hydratotal_items
+     * @param int $score score
      *
      * @return $this
      */
-    public function setHydratotalItems($hydratotal_items)
+    public function setScore($score)
     {
-        $this->container['hydratotal_items'] = $hydratotal_items;
+        $this->container['score'] = $score;
 
         return $this;
     }
 
     /**
-     * Gets hydraview
+     * Gets author_uuid
      *
-     * @return \VentureLeap\RatingService\Model\InlineResponse200Hydraview
+     * @return string
      */
-    public function getHydraview()
+    public function getAuthorUuid()
     {
-        return $this->container['hydraview'];
+        return $this->container['author_uuid'];
     }
 
     /**
-     * Sets hydraview
+     * Sets author_uuid
      *
-     * @param \VentureLeap\RatingService\Model\InlineResponse200Hydraview $hydraview hydraview
+     * @param string $author_uuid author_uuid
      *
      * @return $this
      */
-    public function setHydraview($hydraview)
+    public function setAuthorUuid($author_uuid)
     {
-        $this->container['hydraview'] = $hydraview;
+        $this->container['author_uuid'] = $author_uuid;
 
         return $this;
     }
 
     /**
-     * Gets hydrasearch
+     * Gets product_uuid
      *
-     * @return \VentureLeap\RatingService\Model\InlineResponse200Hydrasearch
+     * @return string
      */
-    public function getHydrasearch()
+    public function getProductUuid()
     {
-        return $this->container['hydrasearch'];
+        return $this->container['product_uuid'];
     }
 
     /**
-     * Sets hydrasearch
+     * Sets product_uuid
      *
-     * @param \VentureLeap\RatingService\Model\InlineResponse200Hydrasearch $hydrasearch hydrasearch
+     * @param string $product_uuid product_uuid
      *
      * @return $this
      */
-    public function setHydrasearch($hydrasearch)
+    public function setProductUuid($product_uuid)
     {
-        $this->container['hydrasearch'] = $hydrasearch;
+        $this->container['product_uuid'] = $product_uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param string $title title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets review
+     *
+     * @return string
+     */
+    public function getReview()
+    {
+        return $this->container['review'];
+    }
+
+    /**
+     * Sets review
+     *
+     * @param string $review review
+     *
+     * @return $this
+     */
+    public function setReview($review)
+    {
+        $this->container['review'] = $review;
 
         return $this;
     }

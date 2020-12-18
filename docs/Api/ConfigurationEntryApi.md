@@ -117,11 +117,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
-<<<<<<< HEAD
  - **Accept**: application/ld+json
-=======
- - **Accept**: application/ld+json, application/json, text/html
->>>>>>> 853c97ce884be8eae2441959755e3e9e3b1b996a
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -173,11 +169,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
-<<<<<<< HEAD
  - **Accept**: application/ld+json
-=======
- - **Accept**: application/ld+json, application/json, text/html
->>>>>>> 853c97ce884be8eae2441959755e3e9e3b1b996a
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -228,64 +220,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-<<<<<<< HEAD
  - **Content-Type**: application/ld+json
  - **Accept**: application/ld+json
-=======
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **postConfigurationEntryCollection**
-> \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationRead postConfigurationEntryCollection($body)
-
-Creates a ConfigurationEntry resource.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: apiKey
-$config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new VentureLeap\RatingService\Api\ConfigurationEntryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite | The new ConfigurationEntry resource
-
-try {
-    $result = $apiInstance->postConfigurationEntryCollection($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->postConfigurationEntryCollection: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite**](../Model/ConfigurationEntryJsonldConfigurationWrite.md)| The new ConfigurationEntry resource | [optional]
-
-### Return type
-
-[**\VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationRead**](../Model/ConfigurationEntryJsonldConfigurationRead.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -338,68 +274,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
->>>>>>> 853c97ce884be8eae2441959755e3e9e3b1b996a
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **putConfigurationEntryItem**
-> \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationRead putConfigurationEntryItem($id, $body)
-
-Replaces the ConfigurationEntry resource.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: apiKey
-$config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = VentureLeap\RatingService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new VentureLeap\RatingService\Api\ConfigurationEntryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite | The updated ConfigurationEntry resource
-
-try {
-    $result = $apiInstance->putConfigurationEntryItem($id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->putConfigurationEntryItem: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **body** | [**\VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationWrite**](../Model/ConfigurationEntryJsonldConfigurationWrite.md)| The updated ConfigurationEntry resource | [optional]
-
-### Return type
-
-[**\VentureLeap\RatingService\Model\ConfigurationEntryJsonldConfigurationRead**](../Model/ConfigurationEntryJsonldConfigurationRead.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
-<<<<<<< HEAD
  - **Content-Type**: application/ld+json
  - **Accept**: application/ld+json
-=======
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
->>>>>>> 853c97ce884be8eae2441959755e3e9e3b1b996a
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

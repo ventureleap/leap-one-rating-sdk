@@ -1,6 +1,6 @@
 <?php
 /**
- * RatingJsonldRatingWrite
+ * RatingJsonldRatingWriteCustomDataRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RatingService\ObjectSerializer;
 
 /**
- * RatingJsonldRatingWrite Class Doc Comment
+ * RatingJsonldRatingWriteCustomDataRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RatingService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
+class RatingJsonldRatingWriteCustomDataRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Rating:jsonld-rating:write';
+    protected static $swaggerModelName = 'Rating:jsonld-rating:write_customData:read';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -63,7 +63,8 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 'author_uuid' => 'string',
 'product_uuid' => 'string',
 'title' => 'string',
-'review' => 'string'    ];
+'review' => 'string',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,7 +79,8 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 'author_uuid' => null,
 'product_uuid' => null,
 'title' => null,
-'review' => null    ];
+'review' => null,
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,7 +116,8 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 'author_uuid' => 'authorUuid',
 'product_uuid' => 'productUuid',
 'title' => 'title',
-'review' => 'review'    ];
+'review' => 'review',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -129,7 +132,8 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 'author_uuid' => 'setAuthorUuid',
 'product_uuid' => 'setProductUuid',
 'title' => 'setTitle',
-'review' => 'setReview'    ];
+'review' => 'setReview',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -144,7 +148,8 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 'author_uuid' => 'getAuthorUuid',
 'product_uuid' => 'getProductUuid',
 'title' => 'getTitle',
-'review' => 'getReview'    ];
+'review' => 'getReview',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,6 +217,7 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
         $this->container['product_uuid'] = isset($data['product_uuid']) ? $data['product_uuid'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['review'] = isset($data['review']) ? $data['review'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -435,6 +441,30 @@ class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
     public function setReview($review)
     {
         $this->container['review'] = $review;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

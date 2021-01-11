@@ -151,4 +151,11 @@ class RatingJsonldRatingReadTest extends \PHPUnit_Framework_TestCase
     public function testPropertyReview()
     {
     }
+
+    /**
+     * Test attribute "custom_data"
+     */
+    public function testPropertyCustomData()
+    {
+    }
 }

@@ -590,15 +590,16 @@ class RatingApi
      *
      * @param  string $product_uuid product_uuid (optional)
      * @param  bool $exists_review exists_review (optional)
+     * @param  string $custom_data custom_data (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\RatingService\Model\InlineResponse2001
      */
-    public function getRatingCollection($product_uuid = null, $exists_review = null, $page = '1')
+    public function getRatingCollection($product_uuid = null, $exists_review = null, $custom_data = null, $page = '1')
     {
-        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $exists_review, $page);
+        list($response) = $this->getRatingCollectionWithHttpInfo($product_uuid, $exists_review, $custom_data, $page);
         return $response;
     }
 
@@ -609,16 +610,17 @@ class RatingApi
      *
      * @param  string $product_uuid (optional)
      * @param  bool $exists_review (optional)
+     * @param  string $custom_data (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\RatingService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRatingCollectionWithHttpInfo($product_uuid = null, $exists_review = null, $page = '1')
+    public function getRatingCollectionWithHttpInfo($product_uuid = null, $exists_review = null, $custom_data = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $custom_data, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -686,14 +688,15 @@ class RatingApi
      *
      * @param  string $product_uuid (optional)
      * @param  bool $exists_review (optional)
+     * @param  string $custom_data (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsync($product_uuid = null, $exists_review = null, $page = '1')
+    public function getRatingCollectionAsync($product_uuid = null, $exists_review = null, $custom_data = null, $page = '1')
     {
-        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $exists_review, $page)
+        return $this->getRatingCollectionAsyncWithHttpInfo($product_uuid, $exists_review, $custom_data, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -708,15 +711,16 @@ class RatingApi
      *
      * @param  string $product_uuid (optional)
      * @param  bool $exists_review (optional)
+     * @param  string $custom_data (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $exists_review = null, $page = '1')
+    public function getRatingCollectionAsyncWithHttpInfo($product_uuid = null, $exists_review = null, $custom_data = null, $page = '1')
     {
         $returnType = '\VentureLeap\RatingService\Model\InlineResponse2001';
-        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $page);
+        $request = $this->getRatingCollectionRequest($product_uuid, $exists_review, $custom_data, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -760,12 +764,13 @@ class RatingApi
      *
      * @param  string $product_uuid (optional)
      * @param  bool $exists_review (optional)
+     * @param  string $custom_data (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRatingCollectionRequest($product_uuid = null, $exists_review = null, $page = '1')
+    protected function getRatingCollectionRequest($product_uuid = null, $exists_review = null, $custom_data = null, $page = '1')
     {
 
         $resourcePath = '/rating/ratings';
@@ -782,6 +787,10 @@ class RatingApi
         // query params
         if ($exists_review !== null) {
             $queryParams['exists[review]'] = ObjectSerializer::toQueryValue($exists_review, null);
+        }
+        // query params
+        if ($custom_data !== null) {
+            $queryParams['customData'] = ObjectSerializer::toQueryValue($custom_data, null);
         }
         // query params
         if ($page !== null) {
@@ -1130,7 +1139,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The new Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1147,7 +1156,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The new Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1222,7 +1231,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1242,7 +1251,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1292,7 +1301,7 @@ class RatingApi
     /**
      * Create request for operation 'postRatingCollection'
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1387,7 +1396,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The updated Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1405,7 +1414,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The updated Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1481,7 +1490,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1502,7 +1511,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1553,7 +1562,7 @@ class RatingApi
      * Create request for operation 'putRatingItem'
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

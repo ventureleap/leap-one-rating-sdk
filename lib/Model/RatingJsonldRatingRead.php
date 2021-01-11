@@ -48,7 +48,7 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Rating:jsonld-rating:read';
+    protected static $swaggerModelName = 'Rating:jsonld-RatingRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -66,7 +66,8 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
 'title' => 'string',
-'review' => 'string'    ];
+'review' => 'string',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +85,8 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
 'title' => null,
-'review' => null    ];
+'review' => null,
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +125,8 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
 'title' => 'title',
-'review' => 'review'    ];
+'review' => 'review',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +144,8 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
 'title' => 'setTitle',
-'review' => 'setReview'    ];
+'review' => 'setReview',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +163,8 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
 'title' => 'getTitle',
-'review' => 'getReview'    ];
+'review' => 'getReview',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,6 +235,7 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['review'] = isset($data['review']) ? $data['review'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -525,6 +531,30 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
     public function setReview($review)
     {
         $this->container['review'] = $review;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * RatingJsonldRatingWriteTest
+ * RatingJsonldRatingWriteCustomDataReadTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\RatingService;
 
 /**
- * RatingJsonldRatingWriteTest Class Doc Comment
+ * RatingJsonldRatingWriteCustomDataReadTest Class Doc Comment
  *
  * @category    Class
- * @description RatingJsonldRatingWrite
+ * @description RatingJsonldRatingWriteCustomDataRead
  * @package     VentureLeap\RatingService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RatingJsonldRatingWriteTest extends \PHPUnit_Framework_TestCase
+class RatingJsonldRatingWriteCustomDataReadTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class RatingJsonldRatingWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RatingJsonldRatingWrite"
+     * Test "RatingJsonldRatingWriteCustomDataRead"
      */
-    public function testRatingJsonldRatingWrite()
+    public function testRatingJsonldRatingWriteCustomDataRead()
     {
     }
 
@@ -128,6 +128,13 @@ class RatingJsonldRatingWriteTest extends \PHPUnit_Framework_TestCase
      * Test attribute "review"
      */
     public function testPropertyReview()
+    {
+    }
+
+    /**
+     * Test attribute "custom_data"
+     */
+    public function testPropertyCustomData()
     {
     }
 }

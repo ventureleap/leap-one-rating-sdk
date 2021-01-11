@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **title** | **string** |  | [optional] 
 **review** | **string** |  | [optional] 
+**custom_data** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

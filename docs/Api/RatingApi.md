@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRatingCollection**
-> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $exists_review, $page)
+> \VentureLeap\RatingService\Model\InlineResponse2001 getRatingCollection($product_uuid, $exists_review, $custom_data, $page)
 
 Retrieves the collection of Rating resources.
 
@@ -136,10 +136,11 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
 );
 $product_uuid = "product_uuid_example"; // string | 
 $exists_review = true; // bool | 
+$custom_data = "custom_data_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getRatingCollection($product_uuid, $exists_review, $page);
+    $result = $apiInstance->getRatingCollection($product_uuid, $exists_review, $custom_data, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RatingApi->getRatingCollection: ', $e->getMessage(), PHP_EOL;
@@ -153,6 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_uuid** | **string**|  | [optional]
  **exists_review** | **bool**|  | [optional]
+ **custom_data** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
@@ -242,7 +244,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The new Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead | The new Rating resource
 
 try {
     $result = $apiInstance->postRatingCollection($body);
@@ -257,7 +259,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The new Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead**](../Model/RatingJsonldRatingWriteCustomDataRead.md)| The new Rating resource | [optional]
 
 ### Return type
 
@@ -295,7 +297,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWrite | The updated Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead | The updated Rating resource
 
 try {
     $result = $apiInstance->putRatingItem($id, $body);
@@ -311,7 +313,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWrite**](../Model/RatingJsonldRatingWrite.md)| The updated Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead**](../Model/RatingJsonldRatingWriteCustomDataRead.md)| The updated Rating resource | [optional]
 
 ### Return type
 

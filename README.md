@@ -196,12 +196,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## 0
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
-
 ## apiKey
 
 - **Type**: API key

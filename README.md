@@ -191,7 +191,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
  - [RatingJsonldRatingRead](docs/Model/RatingJsonldRatingRead.md)
- - [RatingJsonldRatingWriteCustomDataRead](docs/Model/RatingJsonldRatingWriteCustomDataRead.md)
+ - [RatingJsonldRatingWriteCustomDataWrite](docs/Model/RatingJsonldRatingWriteCustomDataWrite.md)
 
 ## Documentation For Authorization
 

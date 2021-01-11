@@ -244,7 +244,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead | The new Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite | The new Rating resource
 
 try {
     $result = $apiInstance->postRatingCollection($body);
@@ -259,7 +259,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead**](../Model/RatingJsonldRatingWriteCustomDataRead.md)| The new Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite**](../Model/RatingJsonldRatingWriteCustomDataWrite.md)| The new Rating resource | [optional]
 
 ### Return type
 
@@ -297,7 +297,7 @@ $apiInstance = new VentureLeap\RatingService\Api\RatingApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead | The updated Rating resource
+$body = new \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite(); // \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite | The updated Rating resource
 
 try {
     $result = $apiInstance->putRatingItem($id, $body);
@@ -313,7 +313,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataRead**](../Model/RatingJsonldRatingWriteCustomDataRead.md)| The updated Rating resource | [optional]
+ **body** | [**\VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite**](../Model/RatingJsonldRatingWriteCustomDataWrite.md)| The updated Rating resource | [optional]
 
 ### Return type
 

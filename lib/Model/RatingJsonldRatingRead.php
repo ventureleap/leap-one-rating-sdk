@@ -63,10 +63,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'score' => 'int',
 'author_uuid' => 'string',
 'product_uuid' => 'string',
-'created_at' => '\DateTime',
-'updated_at' => '\DateTime',
 'title' => 'string',
 'review' => 'string',
+'application_id' => 'string',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
 'custom_data' => 'object'    ];
 
     /**
@@ -82,10 +83,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'score' => null,
 'author_uuid' => null,
 'product_uuid' => null,
-'created_at' => 'date-time',
-'updated_at' => 'date-time',
 'title' => null,
 'review' => null,
+'application_id' => null,
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
 'custom_data' => null    ];
 
     /**
@@ -122,10 +124,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'score' => 'score',
 'author_uuid' => 'authorUuid',
 'product_uuid' => 'productUuid',
-'created_at' => 'createdAt',
-'updated_at' => 'updatedAt',
 'title' => 'title',
 'review' => 'review',
+'application_id' => 'applicationId',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
 'custom_data' => 'customData'    ];
 
     /**
@@ -141,10 +144,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'score' => 'setScore',
 'author_uuid' => 'setAuthorUuid',
 'product_uuid' => 'setProductUuid',
-'created_at' => 'setCreatedAt',
-'updated_at' => 'setUpdatedAt',
 'title' => 'setTitle',
 'review' => 'setReview',
+'application_id' => 'setApplicationId',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
 'custom_data' => 'setCustomData'    ];
 
     /**
@@ -160,10 +164,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'score' => 'getScore',
 'author_uuid' => 'getAuthorUuid',
 'product_uuid' => 'getProductUuid',
-'created_at' => 'getCreatedAt',
-'updated_at' => 'getUpdatedAt',
 'title' => 'getTitle',
 'review' => 'getReview',
+'application_id' => 'getApplicationId',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
 'custom_data' => 'getCustomData'    ];
 
     /**
@@ -231,10 +236,11 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
         $this->container['score'] = isset($data['score']) ? $data['score'] : null;
         $this->container['author_uuid'] = isset($data['author_uuid']) ? $data['author_uuid'] : null;
         $this->container['product_uuid'] = isset($data['product_uuid']) ? $data['product_uuid'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['review'] = isset($data['review']) ? $data['review'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
@@ -440,54 +446,6 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_at
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime $created_at created_at
-     *
-     * @return $this
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated_at
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updated_at'];
-    }
-
-    /**
-     * Sets updated_at
-     *
-     * @param \DateTime $updated_at updated_at
-     *
-     * @return $this
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->container['updated_at'] = $updated_at;
-
-        return $this;
-    }
-
-    /**
      * Gets title
      *
      * @return string
@@ -531,6 +489,78 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
     public function setReview($review)
     {
         $this->container['review'] = $review;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

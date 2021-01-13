@@ -1,6 +1,6 @@
 <?php
 /**
- * RatingJsonldRatingWriteCustomDataWrite
+ * RatingJsonldRatingWrite
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\RatingService\ObjectSerializer;
 
 /**
- * RatingJsonldRatingWriteCustomDataWrite Class Doc Comment
+ * RatingJsonldRatingWrite Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\RatingService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RatingJsonldRatingWriteCustomDataWrite implements ModelInterface, ArrayAccess
+class RatingJsonldRatingWrite implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class RatingJsonldRatingWriteCustomDataWrite implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Rating:jsonld-rating:write_customData:write';
+    protected static $swaggerModelName = 'Rating:jsonld-RatingWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -125,20 +125,6 @@ class RatingJsonldRatingReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_at"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
-    {
-    }
-
-    /**
      * Test attribute "title"
      */
     public function testPropertyTitle()
@@ -149,6 +135,27 @@ class RatingJsonldRatingReadTest extends \PHPUnit_Framework_TestCase
      * Test attribute "review"
      */
     public function testPropertyReview()
+    {
+    }
+
+    /**
+     * Test attribute "application_id"
+     */
+    public function testPropertyApplicationId()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
     {
     }
 

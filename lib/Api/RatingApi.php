@@ -1139,7 +1139,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1156,7 +1156,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1231,7 +1231,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1251,7 +1251,7 @@ class RatingApi
      *
      * Creates a Rating resource.
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1301,7 +1301,7 @@ class RatingApi
     /**
      * Create request for operation 'postRatingCollection'
      *
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The new Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The new Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1396,7 +1396,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1414,7 +1414,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
      *
      * @throws \VentureLeap\RatingService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1490,7 +1490,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1511,7 +1511,7 @@ class RatingApi
      * Replaces the Rating resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1562,7 +1562,7 @@ class RatingApi
      * Create request for operation 'putRatingItem'
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWriteCustomDataWrite $body The updated Rating resource (optional)
+     * @param  \VentureLeap\RatingService\Model\RatingJsonldRatingWrite $body The updated Rating resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

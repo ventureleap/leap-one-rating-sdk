@@ -1,4 +1,4 @@
-# RatingJsonldRatingWriteCustomDataWrite
+# RatingJsonldRatingWrite
 
 ## Properties
 Name | Type | Description | Notes

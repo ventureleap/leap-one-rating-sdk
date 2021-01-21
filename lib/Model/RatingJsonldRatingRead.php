@@ -68,7 +68,7 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
-'custom_data' => 'object'    ];
+'custom_data' => 'object[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -568,7 +568,7 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
     /**
      * Gets custom_data
      *
-     * @return object
+     * @return object[]
      */
     public function getCustomData()
     {
@@ -578,7 +578,7 @@ class RatingJsonldRatingRead implements ModelInterface, ArrayAccess
     /**
      * Sets custom_data
      *
-     * @param object $custom_data custom_data
+     * @param object[] $custom_data custom_data
      *
      * @return $this
      */

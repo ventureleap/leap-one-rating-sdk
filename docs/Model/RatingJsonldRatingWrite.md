@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **product_uuid** | **string** |  | 
 **title** | **string** |  | [optional] 
 **review** | **string** |  | [optional] 
-**custom_data** | **object** |  | [optional] 
+**custom_data** | **object[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
